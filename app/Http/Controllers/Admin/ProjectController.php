@@ -32,7 +32,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Type::all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -47,7 +48,7 @@ class ProjectController extends Controller
         $slug = Str::slug($request->title, '-');
         $form_data['slug'] = $slug;
         $newProject = Project::create($form_data);
-        return redirect()->route('admin.projects.index', $newProject->slug);
+        return redirect()->route('admin.dashboard', $newProject->slug);
     }
 
     /**
