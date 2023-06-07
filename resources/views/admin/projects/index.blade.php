@@ -2,14 +2,11 @@
 
 @section('content')
     <div class="container padding-home">
-        <h2 class="fs-4 text-secondary my-4 p-2">
-            {{ __('INDEX') }}
-        </h2>
         <!--Projects list -->
         <div class="row flex-column justify-content-center">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="text-white">Projects list</h3>
+                    <h2 class="text-white">Projects list</h2>
                     <a href="{{ route('admin.projects.create') }}" class="fs-4 btn btn-light blue-01">Create</a>
                 </div>
                 <table class="table">
@@ -19,7 +16,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Agency</th>
                             <th scope="col">Year</th>
-                            <th scope="col-1 col-2 col-3">Url</th>
+                            <th scope="col">Url</th>
                             <th scope="col">Tech</th>
                             <th scope="col">
                                 <i class="fa-solid fa-hammer"></i>
@@ -51,36 +48,6 @@
 
                     </tbody>
                 </table>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">{{ __('User Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">{{ __('User Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                </div>
             </div>
         </div>
     </div>
