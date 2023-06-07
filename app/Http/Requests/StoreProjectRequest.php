@@ -28,6 +28,7 @@ class StoreProjectRequest extends FormRequest
             'agency' => 'required|max:100',
             'year' => 'required',
             'url' => 'required',
+            'type_id' => 'nullable|exists:types,id',
         ];
     }
 }

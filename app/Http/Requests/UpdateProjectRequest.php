@@ -34,6 +34,8 @@ class UpdateProjectRequest extends FormRequest
             'agency' => 'required|max:100|min:3',
             'year' => 'required',
             'url' => 'required',
+            'type_id' => 'nullable|exists:types,id',
+
         ];
     }
 }
