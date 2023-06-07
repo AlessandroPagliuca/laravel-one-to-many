@@ -15,7 +15,8 @@
                             <th scope="col">Title</th>
                             <th scope="col">Agency</th>
                             <th scope="col">Year</th>
-                            <th scope="col-1 col-2 col-3">Url</th>
+                            <th scope="col">Url</th>
+                            <th scope="col">Tech</th>
                             <th scope="col">
                                 <i class="fa-solid fa-hammer"></i>
                             </th>
@@ -29,6 +30,7 @@
                             <td>{{ $project->agency }}</td>
                             <td>{{ $project->year }}</td>
                             <td>{{ $project->url }}</td>
+                            <td> {{ $project->type ? $project->type->tech : 'No tech specified' }} </td>
                             <td class="d-flex justify-content-start flex-wrap">
                                 <a href="{{ route('admin.projects.show', $project->slug) }}"
                                     class="btn btn-warning m-1">Show</a>

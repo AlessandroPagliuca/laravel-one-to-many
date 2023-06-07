@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container padding-home text-white">
-        <h1>Show</h1>
-        <p class="text-uppercase pt-3">The type tech is: {{ $type->tech }}</p>
-        @foreach ($type->projects as $project)
-            <p>{{ $project->title }}</p>
-            <p class="text-white">{{ $project->url }}</p>
-        @endforeach
+    <div class="container padding-home ">
+        <h2 class="text-white text-uppercase">Show single type</h2>
+        <div class="d-flex justify-content-start align-items-center pt-3">
+            <p class="text-white text-uppercase fw-semibold">The type tech is:</p>
+            <p class="badge bg-light blue-01 p-2 ms-3">{{ $type->tech }}</p>
+
+        </div>
+
     </div>
 @endsection
