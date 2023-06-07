@@ -48,7 +48,7 @@ class ProjectController extends Controller
         $slug = Str::slug($request->title, '-');
         $form_data['slug'] = $slug;
         $newProject = Project::create($form_data);
-        return redirect()->route('admin.dashboard', $newProject->slug);
+        return redirect()->route('admin.projects.index', $newProject->slug);
     }
 
     /**
@@ -86,7 +86,7 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $project->update($form_data);
         $projects = Project::all();
-        return view('admin.dashboard', compact('projects'));
+        return view('admin.projects.show', compact('projects'));
     }
 
     /**
@@ -98,6 +98,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.projects.index');
     }
 }
