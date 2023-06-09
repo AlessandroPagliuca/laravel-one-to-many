@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Type;
 use App\Models\Project;
+use Illuminate\Support\Str;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
@@ -38,8 +39,10 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $form_data = $request->validated();
+        $slug = Str::slug($request->tech, '-');
+        $form_data['slug'] = $slug;
         $newType = Type::create($form_data);
-        return redirect()->route('admin.types.index', $newType->id);
+        return redirect()->route('admin.types.index', ['type' => $newType]);
     }
 
     /**
@@ -74,8 +77,7 @@ class TypeController extends Controller
     {
         $form_data = $request->validated();
         $type->update($form_data);
-        $types = Type::all();
-        return redirect()->route('admin.types.index', compact('types'));
+        return view('admin.types.show', compact('type'));
     }
 
     /**

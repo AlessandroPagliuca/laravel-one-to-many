@@ -35,13 +35,7 @@
                                 <td class="d-flex justify-content-start flex-wrap">
                                     <a href="{{ route('admin.projects.show', $project->slug) }}"
                                         class="btn btn-warning m-1">Show</a>
-                                    <a href="{{ route('admin.projects.edit', $project->slug) }}"
-                                        class="btn btn-success m-1">Edit</a>
-                                    <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="delete-btn btn btn-danger m-1">Delete</button>
-                                    </form>
+
                                 </td>
                             </tr>
                         @endforeach
@@ -51,5 +45,4 @@
             </div>
         </div>
     </div>
-    @include('partials.modal')
 @endsection
