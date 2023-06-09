@@ -64,7 +64,7 @@
                         <option value="{{ $type->id }}">{{ $type->tech }}</option>
                     @endforeach
                 </select>
-                @error('category_id')
+                @error('type_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
